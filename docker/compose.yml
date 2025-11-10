@@ -1,0 +1,22 @@
+services:
+  pingfederate:
+    build: .
+    container_name: pingfederate
+    ports:
+      - "9031:9031"  # PingFederate Runtime Engine (HTTPS)
+      - "9999:9999"  # PingFederate Admin Console (HTTPS)
+    restart: "no"
+    environment:
+      - PING_IDENTITY_ACCEPT_EULA=YES
+      - PING_IDENTITY_PASSWORD="2FederateM0re"
+    volumes:
+      - pingfederate-data:/opt/out
+    networks:
+      - pingfederate-network
+
+volumes:
+  pingfederate-data:
+
+networks:
+  pingfederate-network:
+    driver: bridge
