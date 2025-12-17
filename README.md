@@ -1,6 +1,21 @@
 - admin console: https://localhost:9999/pingfederate/app#/
 - api docs: https://localhost:9999/pf-admin-api/api-docs/
 
+## One-shot local stack (PingFederate + MCP)
+
+Everything runs from compose in `docker/`—PingFederate and the MCP server come up together.
+
+1) Put your license at `docker/PingFederate-12.3-Development.lic`.  
+2) `cd docker && docker compose up --build`  
+3) PingFederate: `https://localhost:9999` (admin) and `https://localhost:9031` (runtime).  
+4) MCP server: auto-starts as `pingfederate-mcp` using `docker/mcp.Dockerfile` with env:
+   - `PF_BASE_URL=https://pingfederate:9999/pf-admin-api/v1`
+   - `PF_USERNAME=Administrator`
+   - `PF_PASSWORD=2FederateM0re`
+   - `PF_VERIFY_TLS=false`
+
+## Manual MCP usage (optional)
+
 ## PingFederate container (docker/)
 
 The `docker` folder holds the compose setup for a local PingFederate instance.
