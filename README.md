@@ -42,12 +42,6 @@ python pingfederate_mcp_server.py
 - Resources: `pf://admin-api/swagger` (local `swagger.json`), `pf://docker/compose` (`docker/compose.yml`)
 - Tools: `pf.get_version`, `pf.list_admin_accounts`, `pf.get_admin_account`, `pf.call_admin_api`
 
-Example prompts you can give Codex once the MCP server is running:
-- “Call `pf.get_version` to show the PingFederate version.”
-- “Use `pf.list_admin_accounts` and tell me the active admins.”
-- “Run `pf.get_admin_account` for username `administrator`.”
-- “Use `pf.call_admin_api` to GET `/license`” (or any other path/verb with params/payload).
-
 ### Quick start in VS Code
 
 If you use an MCP-aware VS Code setup (e.g., Copilot MCP), the repo includes `.vscode/mcp.json` to start this server automatically:
