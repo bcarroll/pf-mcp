@@ -14,21 +14,6 @@ services:
     networks:
       - pingfederate-network
 
-  pingfederate-mcp:
-    build:
-      context: ..
-      dockerfile: docker/mcp.Dockerfile
-    container_name: pingfederate-mcp
-    depends_on:
-      - pingfederate
-    environment:
-      - PF_BASE_URL=https://pingfederate:9999/pf-admin-api/v1
-      - PF_USERNAME=Administrator
-      - PF_PASSWORD=2FederateM0re
-      - PF_VERIFY_TLS=false
-    networks:
-      - pingfederate-network
-
 volumes:
   pingfederate-data:
 
