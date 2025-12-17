@@ -16,11 +16,6 @@ services:
 
 volumes:
   pingfederate-data:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${PWD}/pf-out
-      o: bind
 
 networks:
   pingfederate-network:
