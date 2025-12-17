@@ -41,3 +41,11 @@ python pingfederate_mcp_server.py
 
 - Resources: `pf://admin-api/swagger` (local `swagger.json`), `pf://docker/compose` (`docker/compose.yml`)
 - Tools: `pingfederate.get_version`, `pingfederate.list_admin_accounts`, `pingfederate.get_admin_account`, `pingfederate.call_admin_api`
+
+### Quick start in VS Code
+
+If you use an MCP-aware VS Code setup (e.g., Copilot MCP), the repo includes `.vscode/mcp.json` to start this server automatically:
+
+1. Ensure PingFederate is running (`cd docker && docker compose up --build` with a license in `docker/PingFederate-12.3-Development.lic`).
+2. Open the repo in VS Code; the MCP client will spawn `pingfederate_mcp_server.py` with the env in `.vscode/mcp.json` (PF host/user/password and TLS settings).
+3. In the MCP panel, select `pingfederate-mcp-server`, then use the resources/tools listed above.
