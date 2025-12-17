@@ -41,3 +41,19 @@ python pingfederate_mcp_server.py
 
 - Resources: `pf://admin-api/swagger` (local `swagger.json`), `pf://docker/compose` (`docker/compose.yml`)
 - Tools: `pingfederate.get_version`, `pingfederate.list_admin_accounts`, `pingfederate.get_admin_account`, `pingfederate.call_admin_api`
+
+### Run with Docker Compose
+
+The compose setup also starts the MCP server alongside PingFederate:
+
+```
+cd docker
+docker compose up --build
+```
+
+This builds `pingfederate-mcp` from `docker/mcp.Dockerfile`, copies `pingfederate_mcp_server.py` and `swagger.json`, installs `requirements.txt`, and runs the MCP server with:
+
+- `PF_BASE_URL=https://pingfederate:9999/pf-admin-api/v1`
+- `PF_USERNAME=Administrator`
+- `PF_PASSWORD=2FederateM0re`
+- `PF_VERIFY_TLS=false`
