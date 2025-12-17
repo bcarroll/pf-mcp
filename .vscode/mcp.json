@@ -1,0 +1,19 @@
+{
+	"servers": {
+		"pingfederate-mcp-server": {
+			"type": "stdio",
+			"command": "python",
+			"args": [
+				"pingfederate_mcp_server.py"
+			],
+			"cwd": "/home/bcarroll/git/pf-mcp",
+			"env": {
+				"PF_BASE_URL": "https://localhost:9999/pf-admin-api/v1",
+				"PF_USERNAME": "Administrator",
+				"PF_PASSWORD": "2FederateM0re",
+				"PF_VERIFY_TLS": "false"
+			}
+		}
+	},
+	"inputs": []
+}
