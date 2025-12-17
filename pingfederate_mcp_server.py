@@ -99,7 +99,7 @@ def pingfederate_compose() -> str:
 
 
 @app.tool(
-    name="pingfederate.get_version",
+    name="pf.get_version",
     description="Return PingFederate version information from /version.",
 )
 async def get_version(context: Context) -> dict[str, Any] | str:
@@ -107,7 +107,7 @@ async def get_version(context: Context) -> dict[str, Any] | str:
 
 
 @app.tool(
-    name="pingfederate.list_admin_accounts",
+    name="pf.list_admin_accounts",
     description="List native administrative accounts.",
 )
 async def list_admin_accounts(context: Context) -> dict[str, Any] | str:
@@ -115,7 +115,7 @@ async def list_admin_accounts(context: Context) -> dict[str, Any] | str:
 
 
 @app.tool(
-    name="pingfederate.get_admin_account",
+    name="pf.get_admin_account",
     description="Fetch a specific native administrative account by username.",
 )
 async def get_admin_account(username: str, context: Context) -> dict[str, Any] | str:
@@ -123,7 +123,7 @@ async def get_admin_account(username: str, context: Context) -> dict[str, Any] |
 
 
 @app.tool(
-    name="pingfederate.call_admin_api",
+    name="pf.call_admin_api",
     description=(
         "Call an arbitrary PingFederate Admin API path (relative to PF_BASE_URL). "
         "Supports GET/POST/PUT/PATCH/DELETE with optional params and JSON payload."
